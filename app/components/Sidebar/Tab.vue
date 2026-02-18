@@ -16,13 +16,13 @@ const textClasses = computed(() =>
 <template>
   <nuxt-link
     to="#"
-    class="flex items-center p-3 w-min hover:bg-gray-200 rounded-full"
+    class="flex items-center p-3 w-min text-black hover:bg-gray-200 rounded-full dark:hover:bg-dim-200 dark:text-white"
     :class="defaultTransition"
   >
     <div class="w-6 h-6 text-dim-900 dark:text-white">
       <slot name="icon"></slot>
     </div>
-    <div class="ml-4 text-xl" :class="textClasses">
+    <div class="ml-4 text-xl hidden xl:block" :class="textClasses">
       <slot name="name"></slot>
     </div>
   </nuxt-link>
