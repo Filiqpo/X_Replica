@@ -2,9 +2,10 @@
 import { HomeIcon } from "@heroicons/vue/16/solid";
 import X from "../Logo/X.vue";
 import {
-  HashtagIcon,
+  MagnifyingGlassIcon,
   BellIcon,
-  InboxIcon,
+  UserPlusIcon,
+  EnvelopeIcon,
   BookmarkIcon,
   DocumentTextIcon,
   UserIcon,
@@ -15,7 +16,7 @@ const { defaultTransition } = useTailwindConfig();
 </script>
 
 <template>
-  <div class="flex flex-col h-screen">
+  <section class="flex flex-col h-screen">
     <div
       class="p-2 my-2 rounded-full hover:bg-gray-200 w-min dark:hover:bg-dim-200"
       :class="defaultTransition"
@@ -37,7 +38,7 @@ const { defaultTransition } = useTailwindConfig();
 
       <SidebarTab>
         <template v-slot:icon>
-          <HashtagIcon />
+          <MagnifyingGlassIcon />
         </template>
         <template v-slot:name> Explore </template>
       </SidebarTab>
@@ -51,9 +52,16 @@ const { defaultTransition } = useTailwindConfig();
 
       <SidebarTab>
         <template v-slot:icon>
-          <InboxIcon />
+          <UserPlusIcon />
         </template>
-        <template v-slot:name> Messages </template>
+        <template v-slot:name> Follow </template>
+      </SidebarTab>
+
+      <SidebarTab>
+        <template v-slot:icon>
+          <EnvelopeIcon />
+        </template>
+        <template v-slot:name> Chat </template>
       </SidebarTab>
 
       <SidebarTab>
@@ -84,5 +92,5 @@ const { defaultTransition } = useTailwindConfig();
         <template v-slot:name> More </template>
       </SidebarTab>
     </div>
-  </div>
+  </section>
 </template>
