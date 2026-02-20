@@ -1,5 +1,3 @@
-import { createUser } from "../../utils/users";
-
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
 
@@ -29,7 +27,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     const user = await createUser(userData);
-    return { body: user };
+    return { body: userTransformer(user) };
   } catch (e) {
     if (e.code === "P2002") {
       return sendError(
