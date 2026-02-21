@@ -9,4 +9,8 @@ export default defineNuxtConfig({
       asyncContext: true,
     },
   },
+  runtimeConfig: {
+    jwtAccessSecret: '',
+    jwtRefreshSecret: '',
+  }
 })
