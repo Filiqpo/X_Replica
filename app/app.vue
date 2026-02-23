@@ -1,12 +1,23 @@
 <script setup>
 import { ref } from "vue";
 const darkMode = ref(false);
+const { useAuthUser, initAuth, useAuthLoading } = useAuth();
+const user = useAuthUser();
+const isAuthLoading = useAuthLoading();
+
+onBeforeMount(() => {
+  initAuth();
+});
 </script>
 
 <template>
   <div :class="{ dark: darkMode }">
     <div class="bg-white dark:bg-dim-900">
-      <div class="min-h-full">
+      <div v-if="isAuthLoading">
+        <LoadingPage />
+      </div>
+      <!-- App -->
+      <div v-else-if="user" class="min-h-full">
         <div
           class="grid grid-cols-12 mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:gap-5"
         >
@@ -30,6 +41,8 @@ const darkMode = ref(false);
           </div>
         </div>
       </div>
+
+      <AuthPage v-else />
     </div>
   </div>
 </template>
