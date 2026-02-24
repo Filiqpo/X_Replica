@@ -1,7 +1,7 @@
 import UrlPattern from "url-pattern";
 
 export default defineEventHandler(async (event) => {
-  const endpoints = ["/api/auth/user"];
+  const endpoints = ["/api/auth/user", "/api/auth/user/tweets"];
 
   const requestUrl = getRequestURL(event).pathname;
 

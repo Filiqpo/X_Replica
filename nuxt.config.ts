@@ -12,5 +12,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     jwtAccessSecret: '',
     jwtRefreshSecret: '',
+
+    cloudinaryCloudName: '',
+    cloudinaryApiKey: '',
+    cloudinaryApiSecret: '',
   }
 })
